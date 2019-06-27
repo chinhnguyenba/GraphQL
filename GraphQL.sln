@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.438
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GraphQL.API", "GraphQL.API\GraphQL.API.csproj", "{0F203494-3AA8-4F99-A327-B00FA042A045}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Core", "GraphQL.Core\GraphQL.Core.csproj", "{4278EEC6-00C5-4E88-87CC-705A895F7753}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphQL.Data", "GraphQL.Data\GraphQL.Data.csproj", "{FA448286-EE56-467E-B1DC-D89BF9E545AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F203494-3AA8-4F99-A327-B00FA042A045}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F203494-3AA8-4F99-A327-B00FA042A045}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F203494-3AA8-4F99-A327-B00FA042A045}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F203494-3AA8-4F99-A327-B00FA042A045}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4278EEC6-00C5-4E88-87CC-705A895F7753}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4278EEC6-00C5-4E88-87CC-705A895F7753}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4278EEC6-00C5-4E88-87CC-705A895F7753}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4278EEC6-00C5-4E88-87CC-705A895F7753}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA448286-EE56-467E-B1DC-D89BF9E545AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA448286-EE56-467E-B1DC-D89BF9E545AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA448286-EE56-467E-B1DC-D89BF9E545AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA448286-EE56-467E-B1DC-D89BF9E545AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16C8AE53-1EC8-487B-A461-CAB427EE2636}
+	EndGlobalSection
+EndGlobal
