@@ -33,6 +33,18 @@ namespace GraphQL.Data.Repositories
             return await _db.Players.ToListAsync();
         }
 
+        public async Task<ResponceData<Player>> Paging(int num, int limit)
+        {            
+            var total= await _db.Players.CountAsync();
+            var data= await _db.Players.Skip((num - 1) * limit).Take(limit).ToListAsync();
+            return new ResponceData<Player> { Total=total,Data=data};
+        }
+
+        public async Task<int> Count()
+        {            
+            return await _db.Players.CountAsync();
+        }
+
         public async Task<Player> Add(Player player)
         {
             await _db.Players.AddAsync(player);

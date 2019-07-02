@@ -10,7 +10,7 @@ namespace GraphQL.Data
             : base(options)
         {
             // these are mutually exclusive, migrations cannot be used with EnsureCreated()
-            // Database.EnsureCreated();
+            //Database.EnsureCreated();
             //Database.Migrate();
         }
 
