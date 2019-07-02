@@ -13,4 +13,10 @@ namespace GraphQL.Core.Models
         public string Height { get; set; }
         public int WeightLbs { get; set; }
     }
+
+    public class ResponceData<T>
+    {
+        public int Total { get; set; }
+        public List<T> Data { get; set; }       
+    }
 }

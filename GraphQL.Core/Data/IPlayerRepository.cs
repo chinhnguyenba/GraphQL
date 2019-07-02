@@ -11,6 +11,8 @@ namespace GraphQL.Core.Data
         Task<Player> Get(int id);
         Task<Player> GetRandom();
         Task<List<Player>> All();
+        Task<ResponceData<Player>> Paging(int num, int limit);
+        Task<int> Count();
         Task<Player> Add(Player player);
     }
 }
