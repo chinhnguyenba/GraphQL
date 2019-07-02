@@ -23,4 +23,13 @@ namespace GraphQL.API.Models
                 resolve: context => contextServiceLocator.SkaterStatisticRepository.Get(context.Source.Id), description: "Player's skater stats");
         }
     }
+
+    public class PagingType : ObjectGraphType<ResponceData<Player>>
+    {
+        public PagingType(ContextServiceLocator contextServiceLocator)
+        {            
+            Field<IntGraphType>("total", resolve: context => context.Source.Total);
+            Field<ListGraphType<PlayerType>>("data", resolve: context => context.Source.Data);
+        }
+    }
 }

@@ -36,13 +36,14 @@ namespace GraphQL.API
 
             services.AddHttpContextAccessor();
             services.AddSingleton<ContextServiceLocator>();
-            services.AddDbContext<GraphQLDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:NHLStatsDb"]));
+            services.AddDbContext<GraphQLDbContext>(options => options.UseSqlServer(Configuration["ConnectionStrings:GrapQLDb"], option => option.UseRowNumberForPaging()));
             services.AddTransient<IPlayerRepository, PlayerRepository>();
             services.AddTransient<ISkaterStatisticRepository, SkaterStatisticRepository>();
-            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();
-            services.AddSingleton<Models.QueryString>();
+            services.AddSingleton<IDocumentExecuter, DocumentExecuter>();            
+            services.AddSingleton<GraphQLQuery>();
             services.AddSingleton<GraphQLMutation>();
             services.AddSingleton<PlayerType>();
+            services.AddSingleton<PagingType>();
             services.AddSingleton<PlayerInputType>();
             services.AddSingleton<SkaterStatisticType>();
             var sp = services.BuildServiceProvider();
@@ -50,7 +51,7 @@ namespace GraphQL.API
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, GraphQLDbContext db)
         {
             if (env.IsDevelopment())
             {
@@ -59,6 +60,7 @@ namespace GraphQL.API
 
             app.UseGraphiQl();
             app.UseMvc();
+            //db.EnsureSeedData();
         }
     }
 }

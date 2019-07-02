@@ -28,6 +28,7 @@ namespace GraphQL.API.Controllers
             var executionOptions = new ExecutionOptions
             {
                 Schema = _schema,
+                OperationName=query.OperationName,                
                 Query = query.Query,
                 Inputs = inputs
             };

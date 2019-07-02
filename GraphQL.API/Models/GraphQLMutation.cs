@@ -12,7 +12,7 @@ namespace GraphQL.API.Models
     {
         public GraphQLMutation(ContextServiceLocator contextServiceLocator)
         {
-            Name = "CreatePlayerMutation";
+            Name = "mutation";
 
             Field<PlayerType>(
                 "createPlayer",

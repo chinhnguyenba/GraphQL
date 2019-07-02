@@ -21,8 +21,13 @@ namespace GraphQL.API.Models
                 resolve: context => contextServiceLocator.PlayerRepository.GetRandom());
 
             Field<ListGraphType<PlayerType>>(
-                "players",
+                "allplayers",
                 resolve: context => contextServiceLocator.PlayerRepository.All());
+
+            Field<PagingType>(
+                "players",                
+                arguments: new QueryArguments(new QueryArgument<IntGraphType> { Name = "num" }, new QueryArgument<IntGraphType> { Name = "limit" }),
+                resolve: context => contextServiceLocator.PlayerRepository.Paging(context.GetArgument<int>("num"), context.GetArgument<int>("limit")));
         }
     }
 }
