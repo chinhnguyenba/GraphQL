@@ -19,7 +19,7 @@ namespace GraphQL.API
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseUrls("http://192.168.25.95:5000/")
+                .UseUrls("http://localhost:5000/")
                 .UseStartup<Startup>();
     }
 }
